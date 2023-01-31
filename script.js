@@ -35,6 +35,8 @@ function addCards(){
       </section>
         `  
     })
+
+    document.getElementById("card_1").appendChild()
 }
 
 addCards();
