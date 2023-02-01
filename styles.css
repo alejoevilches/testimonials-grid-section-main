@@ -9,6 +9,11 @@
     src: url(/BarlowSemiCondensed-Regular.ttf);
 }
 
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
 :root{
     --card1-color:hsl(263, 55%, 52%);
     --card2-color:hsl(217, 19%, 35%);
@@ -19,7 +24,10 @@
 body{
     font-family: var(--main-font);
     color:white;
-    background-color: rgb(111, 118, 148)
+    background-color: rgb(111, 118, 148);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #grid_container{
@@ -29,6 +37,7 @@ body{
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+    grid-auto-flow: row;
 }
 
 .card{
@@ -38,6 +47,10 @@ body{
     flex-direction: column;
     gap:5px;
     justify-content: center;
+}
+
+.card:hover{
+    outline:2px solid rgba(255, 192, 203, 0.512);
 }
 
 .card img{
@@ -60,10 +73,18 @@ body{
     background-color: white;
 }
 
+#card_3 > div p:nth-child(2){
+    color:rgba(0, 0, 0, 0.5);
+}
+
 #card_4{
     grid-area: 2 / 1 / 3 / 2;
     color:black;
     background-color: white;
+}
+
+#card_4 > div p:nth-child(2){
+    color:rgba(0, 0, 0, 0.5);
 }
 
 #card_5{
@@ -82,7 +103,69 @@ body{
     color:rgba(255, 255, 255, 0.5);
 }
 
-#card_3 > .card_graduate{
-    color:red;
+
+.card_title{
+    font-size:1.3em;
+    font-weight:bold;
+    padding:5px 0;
+}
+
+.attribution{
+    margin-top:3vh;
+    text-decoration: none;
+    color:white;
+}
+
+@media screen and (max-width:1350px){
+    #grid_container{
+        grid-template-rows: repeat(3,500px);
+    }
+
+    #card_1{
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    #card_2{
+        grid-area: 1 / 3 / 2 / 5;
+    }
+    #card_3{
+        grid-area: 2 / 2 / 3 / 5;
+    }
+    #card_4{
+        grid-area: 2 / 1 / 3 / 2; 
+    }
+    #card_5{
+        grid-area: 3 / 1 / 4 / 5;
+        
+    }
+}
+
+@media screen and (max-width:830px) {
+    #grid_container{
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: 1fr;
+        margin:10vh 20px 0 20px
+    }
+
+    #card_1{
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    #card_2{
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    #card_3{
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    #card_4{
+        grid-area: 4 / 1 / 5 / 2;
+    }
+
+    #card_5{
+        grid-area: 5 / 1 / 6 / 2
+    }
+
+    
 }
 
